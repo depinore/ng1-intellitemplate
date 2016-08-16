@@ -1,6 +1,6 @@
 {
   "name": "ng1-intellitemplate",
-  "version": "1.0.5",
+  "version": "1.1.1",
   "description": "A hacky cli script for typescript autocomplete support in angular 1.x templates.",
   "main": "index.js",
   "author": "depinore",
