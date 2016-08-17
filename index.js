@@ -25,10 +25,10 @@ function getArguments() {
 function replace(config, contents, commentsPattern, commentsReplacePattern, es5EscapePattern, es6EscapePattern, unescapeReplacePattern) {
     //will find all intellitemplate strings.
     
-    commentsPattern = commentsPattern || /\/\/(?:\s*)tpl:? *(.*?)\s([\s\S]*?)(["`])([\s\S]*?);?\s*\/\/(?:\s*)endtpl/gm;
-    var hasTemplateUrl = /\/\/(?:\s*)tpl: *(.+?)/;
-    var insertTemplateCache = `${config.moduleVar}.run(['$templateCache', function($templateCache){ $templateCache.insert('$1', $3$4); }]);`
-    var noTemplateCache = '$2$3$4';
+    commentsPattern = commentsPattern || /["'`]\s*tpl:? *(.*?)["'`];?([\s\S]*?);?\s*?['"`]\/tpl['`"];?/gm;
+    var hasTemplateUrl = /['"`]\s*tpl: *(.+?)['"`];?/;
+    var insertTemplateCache = `${config.moduleVar}.run(['$templateCache', function($templateCache){ $templateCache.insert('$1', $2); }]);`
+    var noTemplateCache = '$2';
 
     //replaces all intellitemplate strings with templateCache insertions
     commentsReplacePattern = commentsReplacePattern || insertTemplateCache;
