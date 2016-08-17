@@ -46,7 +46,7 @@ function replace(config, contents, commentsPattern, commentsReplacePattern, es5E
     var noTemplateCacheMutator = getMutator(commentsPattern, noTemplateCache)
 
     //find intellitemplates
-    return contents.match(commentsPattern).map(toMatches)
+    return (contents.match(commentsPattern) || []).map(toMatches)
         .map(function(replacement) {
             return (hasTemplateUrl.test(replacement.before) 
                         ? templateCacheMutator 
