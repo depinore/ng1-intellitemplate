@@ -3,7 +3,7 @@ if(process.argv.length >= 3)//if we have arguments passed into this script, that
 
 function runCli() {
     var configuration = getArguments();
-    console.log(replace(configuration, require('fs').readFileSync(configuration.inFile, 'utf8')));
+    process.stdout.write(replace(configuration, require('fs').readFileSync(configuration.inFile, 'utf8')));
 }
 
 function getArguments() {
