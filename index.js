@@ -35,7 +35,7 @@ function replace(config, contents, commentsPattern, commentsReplacePattern, es5E
 
     //This pattern is to be used on es5 code generated from typescript.
     es5EscapePattern = es5EscapePattern || /" \+ (.*?) \+ "/gm;
-    const es5ReplacePattern = `   $1   `;   //make sure that the + and the spaces are replaced with the same number of spaces.  This will preserve ts sourceMaps.
+    const es5ReplacePattern = `    $1    `;   //make sure that the + and the spaces are replaced with the same number of spaces.  This will preserve ts sourceMaps.
 
     //this pattern is to be used on es6+ code.
     es6EscapePattern = es6EscapePattern || /\${([\s\S]*?)}/gm;
