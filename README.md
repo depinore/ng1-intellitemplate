@@ -109,5 +109,6 @@ var myVariable: { weight: number } //this variable is only here for data-binding
 var myTemplate = "Hello!  <span>I weigh {{myVariable.weight}}</span>"
 "/tpl"
 ```
+Notice how myVariable.weight is now part of the string template, and no longer escaped as a proper variable.
 
 This results in angular templates that are easy to maintain, and which get converted into a syntax that the angular data-binding engine understands! :)
