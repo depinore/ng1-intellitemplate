@@ -90,21 +90,21 @@ var myMessage = "Hello, my name is name!"
 
 While this may not seem useful, what if we did it to an angular template?
 ```
-var myVariable: { weight: number } //this variable is only here for data-binding; don't initialize it.
+var myVariable: { weight: number }
 "tpl"
 var myTemplate = `Hello!  <span>I weigh {{${myVariable.weight}}}</span>`
 "/tpl"
 ```
 compiles to this in ES5:
 ```
-var myVariable: { weight: number } //this variable is only here for data-binding; don't initialize it.
+var myVariable: { weight: number }
 "tpl"
 var myTemplate = "Hello!  <span>I weigh {{" + myVariable.weight + "}}</span>"
 "/tpl"
 ```
 gets converted to this by ng1-intellitemplate:
 ```
-var myVariable: { weight: number } //this variable is only here for data-binding; don't initialize it.
+var myVariable: { weight: number }
 "tpl"
 var myTemplate = "Hello!  <span>I weigh {{myVariable.weight}}</span>"
 "/tpl"
